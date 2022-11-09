@@ -1,0 +1,16 @@
+.root {
+
+}
+
+#side_box {
+    -fx-background-color: #00B0EB;
+}
+#side_button {
+    -fx-background-color: #00B0EB;
+    -fx-text-fill: white; 
+}
+
+#side_button:hover {
+    -fx-background-color: #0099cc;
+    -fx-text-fill: white;
+}
