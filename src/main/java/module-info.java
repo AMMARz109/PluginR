@@ -5,4 +5,5 @@ module PluginR {
     requires javafx.graphics;
 
     exports me.ammardev.pluginr;
+    opens me.ammardev.pluginr to javafx.fxml;
 }
