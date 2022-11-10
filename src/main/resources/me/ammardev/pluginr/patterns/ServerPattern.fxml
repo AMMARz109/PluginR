@@ -8,30 +8,39 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-
 <BorderPane id="server_pattern" prefHeight="110.0" prefWidth="409.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
    <left>
       <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-         <children>
-            <Label fx:id="serverName" layoutX="59.0" layoutY="35.0" prefHeight="41.0" prefWidth="157.0" text=" Server name" textFill="WHITE">
-               <font>
-                  <Font name="Dubai Bold" size="21.0" />
-               </font>
-            </Label>
-            <ImageView fitHeight="45.0" fitWidth="50.0" layoutX="14.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../UI/server1.png" />
-               </image>
-            </ImageView>
-         </children>
+         <Label fx:id="serverName" layoutX="59.0" layoutY="35.0" prefHeight="41.0" prefWidth="157.0" text=" Server name"
+                textFill="WHITE">
+            <font>
+               <Font name="Dubai Bold" size="21.0"/>
+            </font>
+         </Label>
+         <ImageView fitHeight="45.0" fitWidth="50.0" layoutX="14.0" layoutY="33.0" pickOnBounds="true"
+                    preserveRatio="true">
+            <Image url="@../UI/server1.png"/>
+         </ImageView>
+         <Label fx:id="serverName1" layoutX="22.0" layoutY="76.0" prefHeight="41.0" prefWidth="62.0" text="1.19"
+                textFill="WHITE">
+            <font>
+               <Font name="Dubai Bold" size="21.0"/>
+            </font>
+         </Label>
+         <Label fx:id="serverName11" layoutX="69.0" layoutY="76.0" prefHeight="41.0" prefWidth="62.0" text="Spigot"
+                textFill="WHITE">
+            <font>
+               <Font name="Dubai Bold" size="21.0"/>
+            </font>
+         </Label>
       </Pane>
    </left>
    <right>
       <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-         <children>
-            <Button id="server_button" fx:id="startButton" layoutX="23.0" layoutY="30.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="154.0" text="Start" />
-            <Button id="server_button" fx:id="manageButton" layoutX="23.0" layoutY="63.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="154.0" text="Manage" />
-         </children>
+         <Button id="server_button" fx:id="startButton" layoutX="23.0" layoutY="30.0" mnemonicParsing="false"
+                 prefHeight="24.0" prefWidth="154.0" text="Start"/>
+         <Button id="server_button" fx:id="manageButton" layoutX="23.0" layoutY="63.0" mnemonicParsing="false"
+                 prefHeight="24.0" prefWidth="154.0" text="Manage"/>
       </Pane>
    </right>
 </BorderPane>

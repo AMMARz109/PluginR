@@ -27,10 +27,10 @@ public class App extends Application {
         stage.show();
 
         //create save dir -------------------------
-        if (!Path.of(System.getenv("APPDATA") + "/PluginR").toFile().exists()){
-            File dir = new File(System.getenv("APPDATA") + "/PluginR");
+        if (!Path.of(Statics.mainDir).toFile().exists()){
+            File dir = new File(Statics.mainDir);
             dir.mkdirs();
-            File file = new File(dir.getAbsoluteFile() + "/servers.json");
+            File file = new File(Statics.serversDir);
             file.createNewFile();
             System.out.println("Path created at: " + dir.getAbsolutePath());
         }
