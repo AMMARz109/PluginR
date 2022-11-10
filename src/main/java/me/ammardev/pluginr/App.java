@@ -6,7 +6,9 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import java.io.File;
 import java.io.IOException;
+import java.nio.file.Path;
 import java.util.Objects;
 
 public class App extends Application {
@@ -23,5 +25,14 @@ public class App extends Application {
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("App.fxml")));
         stage.setScene(new Scene(root));
         stage.show();
+
+        //create save dir -------------------------
+        if (!Path.of(System.getenv("APPDATA") + "/PluginR").toFile().exists()){
+            File dir = new File(System.getenv("APPDATA") + "/PluginR");
+            dir.mkdirs();
+            File file = new File(dir.getAbsoluteFile() + "/servers.json");
+            file.createNewFile();
+            System.out.println("Path created at: " + dir.getAbsolutePath());
+        }
     }
 }

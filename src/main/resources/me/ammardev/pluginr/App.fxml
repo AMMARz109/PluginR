@@ -12,55 +12,48 @@
 <BorderPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="me.ammardev.pluginr.MainController">
    <left>
       <VBox id="side_box" prefHeight="400.0" prefWidth="191.0" BorderPane.alignment="TOP_LEFT">
-         <children>
-            <Button id="side_button" alignment="BOTTOM_LEFT" mnemonicParsing="false" onAction="#changeToServers" prefHeight="60.0" prefWidth="236.0" text="  Servers">
-               <font>
-                  <Font name="Dubai Regular" size="25.0" />
-               </font>
-               <graphic>
-                  <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@UI/server.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
-            <Button id="side_button" alignment="BOTTOM_LEFT" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#changeToSettings" prefHeight="60.0" prefWidth="266.0" text="  Settings">
-               <font>
-                  <Font name="Dubai Regular" size="25.0" />
-               </font>
-               <graphic>
-                  <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@UI/settings.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
-            <Button id="side_button" alignment="BOTTOM_LEFT" layoutX="10.0" layoutY="70.0" mnemonicParsing="false" onAction="#changeToAbout" prefHeight="60.0" prefWidth="266.0" text="  About">
-               <font>
-                  <Font name="Dubai Regular" size="25.0" />
-               </font>
-               <graphic>
-                  <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@UI/info.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
-            <VBox alignment="BOTTOM_LEFT" prefHeight="270.0" prefWidth="191.0">
-               <children>
-                  <Label prefHeight="17.0" prefWidth="201.0" text=" Version 1.0" textFill="WHITE" />
-               </children>
-            </VBox>
-         </children>
+         <Button id="side_button" alignment="BOTTOM_LEFT" mnemonicParsing="false" onAction="#changeToServers"
+                 prefHeight="60.0" prefWidth="236.0" text="  Servers">
+            <font>
+               <Font name="Dubai Regular" size="25.0"/>
+            </font>
+            <graphic>
+               <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                  <Image url="@UI/server.png"/>
+               </ImageView>
+            </graphic>
+         </Button>
+         <Button id="side_button" alignment="BOTTOM_LEFT" layoutX="10.0" layoutY="10.0" mnemonicParsing="false"
+                 onAction="#changeToSettings" prefHeight="60.0" prefWidth="266.0" text="  Settings">
+            <font>
+               <Font name="Dubai Regular" size="25.0"/>
+            </font>
+            <graphic>
+               <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                  <Image url="@UI/settings.png"/>
+               </ImageView>
+            </graphic>
+         </Button>
+         <Button id="side_button" alignment="BOTTOM_LEFT" layoutX="10.0" layoutY="70.0" mnemonicParsing="false"
+                 onAction="#changeToAbout" prefHeight="60.0" prefWidth="266.0" text="  About">
+            <font>
+               <Font name="Dubai Regular" size="25.0"/>
+            </font>
+            <graphic>
+               <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                  <Image url="@UI/info.png"/>
+               </ImageView>
+            </graphic>
+         </Button>
+         <VBox alignment="BOTTOM_LEFT" prefHeight="270.0" prefWidth="191.0">
+            <Label prefHeight="17.0" prefWidth="201.0" text=" Version 1.0" textFill="WHITE"/>
+         </VBox>
       </VBox>
    </left>
    <center>
       <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
          <BorderPane.margin>
-            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            <Insets />
          </BorderPane.margin>
       </VBox>
    </center>
