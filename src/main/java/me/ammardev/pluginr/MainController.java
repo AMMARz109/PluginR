@@ -7,15 +7,18 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
+import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.Pane;
-import javafx.scene.layout.VBox;
+import javafx.scene.control.ScrollPane;
+import javafx.scene.layout.*;
 
+import java.awt.*;
 import java.io.*;
+import java.net.URI;
 import java.net.URL;
 import java.nio.file.Paths;
 import java.util.*;
+import java.util.List;
 
 public class MainController implements Initializable {
 
@@ -24,24 +27,29 @@ public class MainController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        try {
-            addServer(new Server(ServerType.Spigot, "reload", "1.8"));
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
         changeToServers();
     }
 
     public void changeToServers(){
+        //Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        //System.out.printf("%f | %f", stage.getX(), stage.getY());
         //pre-add self structures
+        ScrollPane rootScroll = new ScrollPane();
         VBox rootbox = new VBox();
-        rootPane.setCenter(rootbox);
+        rootScroll.setContent(rootbox);
 
+        rootbox.prefWidthProperty().bind(rootScroll.widthProperty());
+
+        rootPane.setCenter(rootScroll);
+
+
+        long add = 0;
         try {
             BorderPane pane = FXMLLoader.load(getClass().getResource("patterns/NewServer.fxml"));
             VBox.setMargin(pane, new Insets(5));
             rootbox.getChildren().add(pane);
             for (Server server: loadServers()) {
+                add += 130;
                 BorderPane item = FXMLLoader.load(getClass().getResource("patterns/ServerPattern.fxml"));
                 Pane left = (Pane) item.getLeft();
                 Label name  = (Label) left.getChildren().get(0);
@@ -59,11 +67,15 @@ public class MainController implements Initializable {
             e.printStackTrace();
         }
         //after pre-add
-
+        rootbox.setPrefHeight(rootbox.getHeight() + add);
     }
 
-    public void changeToAbout(){
-
+    public void changeToAbout() throws IOException {
+        BorderPane pane = FXMLLoader.load(getClass().getResource("patterns/aboutPattern.fxml"));
+        rootPane.setCenter(pane);
+        BorderPane inPane = (BorderPane) pane.getLeft();
+        Hyperlink hyperlink = (Hyperlink) inPane.getBottom();
+        hyperlink.setOnAction(event -> sendSite());
     }
 
     public void changeToSettings(){
@@ -93,6 +105,15 @@ public class MainController implements Initializable {
         try (Writer writer = new FileWriter(Statics.serversDir)){
             writer.write(gson.toJson(servers));
             writer.flush();
+        }
+
+    }
+
+    public void sendSite(){
+        try{
+            Desktop.getDesktop().browse(new URI("https://ammardevz.wordpress.com"));
+        }catch (Exception e){
+            e.printStackTrace();
         }
     }
 

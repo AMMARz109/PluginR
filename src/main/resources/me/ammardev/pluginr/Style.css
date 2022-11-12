@@ -29,3 +29,7 @@
 #server_button:hover {
     -fx-background-color: #F1F1F1;
 }
+
+#about_label {
+ -fx-background-color: linear-gradient(from 100.0% 0.0% to 35.6467% 68.4543%, #FFFFFF 0.0%, #00B0EB 100.0%);
+}

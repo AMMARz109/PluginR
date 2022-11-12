@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="200.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+   <top>
+      <Pane prefHeight="40.0" prefWidth="409.0" BorderPane.alignment="CENTER" />
+   </top>
+   <left>
+      <BorderPane prefHeight="360.0" prefWidth="268.0" BorderPane.alignment="CENTER">
+         <top>
+            <Pane id="about_label" prefHeight="54.0" prefWidth="358.0" BorderPane.alignment="CENTER">
+               <Label layoutX="14.0" layoutY="-3.0" text="About" textFill="WHITE">
+                  <font>
+                     <Font name="Dubai Bold" size="33.0"/>
+                  </font>
+               </Label>
+            </Pane>
+         </top>
+         <left>
+            <Label alignment="TOP_LEFT" prefHeight="200.0" prefWidth="269.0" text="   This app has been developed by AMMAR DEV&#10;&#10;   All copyrights belongs to AMMAR DEV&#10;&#10;   For more visit oursite by clicking the link below" BorderPane.alignment="CENTER" />
+         </left>
+         <bottom>
+            <Hyperlink fx:id="link_button" prefHeight="45.0" prefWidth="73.0" text="Visit our site" BorderPane.alignment="CENTER" />
+         </bottom>
+      </BorderPane>
+   </left>
+</BorderPane>
